@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background"
+              android:orientation="vertical">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:background="@android:color/white">
+
+			<ImageView
+				android:id="@+id/tab_topic"
+				style="@style/IconImage"
+				android:src="@drawable/ic_home_selector"/>
+
+			<View style="@style/CutLine"/>
+
+			<ImageView
+				android:id="@+id/tab_message"
+				style="@style/IconImage"
+				android:src="@drawable/ic_message_selector"/>
+
+			<View style="@style/CutLine"/>
+
+			<ImageView
+				android:id="@+id/tab_account"
+				style="@style/IconImage"
+				android:src="@drawable/ic_user_selector"/>
+		</LinearLayout>
+
+		<View
+			android:layout_gravity="bottom"
+			style="@style/Underline"/>
+	</FrameLayout>
+
+	<android.support.v4.view.ViewPager
+		android:id="@+id/view_pager"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+</LinearLayout>
