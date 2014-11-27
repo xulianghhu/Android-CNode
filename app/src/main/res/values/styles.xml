@@ -43,6 +43,9 @@
 		<item name="android:drawablePadding">5dp</item>
 		<item name="android:paddingLeft">10dp</item>
 		<item name="android:gravity">left|center_vertical</item>
+		<item name="android:clickable">true</item>
+		<item name="android:focusable">true</item>
+		<item name="android:background">@drawable/background_selector</item>
 	</style>
 
 	<style name="IconImage">

@@ -20,7 +20,7 @@ public class CNodeApplication extends Application {
 	}
 
 	private void init() {
-		RequestManager.init(this);
+		CNodeClient.init(this);
 		createImageCache();
 	}
 

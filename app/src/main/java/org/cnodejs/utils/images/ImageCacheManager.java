@@ -8,7 +8,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageLoader.ImageCache;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
 
-import org.cnodejs.RequestManager;
+import org.cnodejs.CNodeClient;
 
 /**
  * Implementation of volley's ImageCache interface. This manager tracks the application image loader and cache. 
@@ -78,7 +78,7 @@ public class ImageCacheManager{
 			break;
 		}
 		
-		mImageLoader = new ImageLoader(RequestManager.getRequestQueue(), mImageCache);
+		mImageLoader = new ImageLoader(CNodeClient.getRequestQueue(), mImageCache);
 	}
 	
 	public Bitmap getBitmap(String url) {

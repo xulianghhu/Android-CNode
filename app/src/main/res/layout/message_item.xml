@@ -1,0 +1,44 @@
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/list_item_shape"
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<com.android.volley.toolbox.NetworkImageView
+				android:id="@+id/tv_avatar"
+				android:layout_width="24dp"
+				android:layout_height="24dp"
+				android:layout_margin="10dp"
+				android:layout_gravity="center_vertical|left"
+				android:adjustViewBounds="true"/>
+
+			<TextView
+				style="@style/TitleText"
+				android:text="xuliang"
+				android:textStyle="bold"/>
+
+			<TextView
+				style="@style/TitleText"
+				android:text="回复了你的话题"/>
+
+		</LinearLayout>
+
+		<TextView
+			style="@style/ContentText"
+			android:text="正在学习nodejs,写了一个简单的博客网站"/>
+
+	</LinearLayout>
+</FrameLayout>

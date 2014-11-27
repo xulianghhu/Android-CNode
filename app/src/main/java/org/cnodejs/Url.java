@@ -9,5 +9,7 @@ public class Url {
 	public static final String GET_TOPICS = SCHEMA + PATH + "/topics";
 
 	public static final String GET_TOPIC_DETAIL = SCHEMA + PATH + "/topics/%s";
-	
+
+	public static final String GET_MESSAGES = SCHEMA + PATH + "/messages";
+
 }

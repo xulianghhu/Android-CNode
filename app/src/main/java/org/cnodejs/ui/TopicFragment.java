@@ -1,9 +1,7 @@
 package org.cnodejs.ui;
 
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +10,9 @@ import android.widget.ListView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.cnodejs.CNodeClient;
 import org.cnodejs.R;
-import org.cnodejs.RequestManager;
 import org.cnodejs.model.TopicData;
-
-import butterknife.InjectView;
-import butterknife.Views;
 
 public class TopicFragment extends Fragment {
 
@@ -39,7 +34,7 @@ public class TopicFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 
 		if (mAdapter == null) {
-			RequestManager.getTopics(createReqSuccessListener(), createReqErrorListener(), 1, 10, false, null);
+			CNodeClient.getTopics(createReqSuccessListener(), createReqErrorListener(), 1, 10, false, null);
 		} else {
 			mTopicList.setAdapter(mAdapter);
 		}
