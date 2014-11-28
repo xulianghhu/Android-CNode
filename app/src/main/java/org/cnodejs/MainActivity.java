@@ -3,17 +3,15 @@ package org.cnodejs;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
 
 import org.cnodejs.ui.AccountFragment;
-import org.cnodejs.ui.MessageFragment;
-import org.cnodejs.ui.TopicFragment;
+import org.cnodejs.ui.ItemListFragment;
+import org.cnodejs.ui.MessageListFragment;
+import org.cnodejs.ui.TopicListFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,8 +41,8 @@ public class MainActivity extends FragmentActivity implements ViewPager.OnPageCh
 		Views.inject(this);
 
 		mFragments = new ArrayList<Fragment>();
-		mFragments.add(new TopicFragment());
-		mFragments.add(new MessageFragment());
+		mFragments.add(new TopicListFragment());
+		mFragments.add(new MessageListFragment());
 		mFragments.add(new AccountFragment());
 		mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
 			@Override
@@ -77,6 +75,12 @@ public class MainActivity extends FragmentActivity implements ViewPager.OnPageCh
 		mTopicTab.setSelected(i == 0);
 		mMessageTab.setSelected(i == 1);
 		mAccountTab.setSelected(i == 2);
+		switch (i) {
+			case 0:
+			case 1:
+				((ItemListFragment) mFragments.get(i)).onPageSelected();
+				break;
+		}
 	}
 
 	@Override

@@ -30,7 +30,7 @@ public class CNodeApplication extends Application {
 				, DISK_IMAGECACHE_SIZE
 				, DISK_IMAGECACHE_COMPRESS_FORMAT
 				, DISK_IMAGECACHE_QUALITY
-				, ImageCacheManager.CacheType.MEMORY);
+				, ImageCacheManager.CacheType.DISK);
 	}
 
 	public String getAccessToken() {

@@ -17,28 +17,42 @@
 			android:layout_height="wrap_content"
 			android:orientation="horizontal">
 
-			<com.android.volley.toolbox.NetworkImageView
-				android:id="@+id/tv_avatar"
-				android:layout_width="24dp"
-				android:layout_height="24dp"
-				android:layout_margin="10dp"
-				android:layout_gravity="center_vertical|left"
-				android:adjustViewBounds="true"/>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:background="@drawable/background_selector"
+				android:clickable="true"
+				android:focusable="true">
+
+				<com.android.volley.toolbox.NetworkImageView
+					android:id="@+id/message_avatar"
+					android:layout_width="24dp"
+					android:layout_height="24dp"
+					android:layout_marginLeft="10dp"
+					android:layout_gravity="center_vertical|left"
+					android:adjustViewBounds="true"/>
+
+				<TextView
+					android:id="@+id/message_author"
+					style="@style/TitleText"
+					android:textStyle="bold"/>
+			</LinearLayout>
 
 			<TextView
 				style="@style/TitleText"
-				android:text="xuliang"
-				android:textStyle="bold"/>
-
-			<TextView
-				style="@style/TitleText"
-				android:text="回复了你的话题"/>
-
+				android:text="@string/message_reply"/>
 		</LinearLayout>
 
 		<TextView
-			style="@style/ContentText"
-			android:text="正在学习nodejs,写了一个简单的博客网站"/>
-
+			android:id="@+id/message_topic"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="10dp"
+			android:textColor="@color/text"
+			android:textSize="16sp"
+			android:background="@drawable/background_selector"
+			android:clickable="true"
+			android:focusable="true"/>
 	</LinearLayout>
 </FrameLayout>

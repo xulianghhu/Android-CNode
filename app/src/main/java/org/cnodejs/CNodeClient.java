@@ -46,12 +46,12 @@ public class CNodeClient {
 	 * @param mdrender      是否渲染html
 	 * @param tab           主题分类
 	 */
-	public static void getTopics(Response.Listener<TopicData> listener,
-	                             Response.ErrorListener errorListener,
-	                             int page,
-	                             int limit,
-	                             boolean mdrender,
-	                             String tab) {
+	public synchronized static void getTopics(Response.Listener<TopicData> listener,
+	                                          Response.ErrorListener errorListener,
+	                                          int page,
+	                                          int limit,
+	                                          boolean mdrender,
+	                                          String tab) {
 
 		Uri.Builder uriBuilder = Uri.parse(Url.GET_TOPICS).buildUpon()
 				.appendQueryParameter("page", String.valueOf(page))
@@ -69,10 +69,10 @@ public class CNodeClient {
 		getRequestQueue().add(request);
 	}
 
-	public static void getMessages(Response.Listener<MessageData> listener,
-	                               Response.ErrorListener errorListener,
-	                               String accessToken) {
-		Uri.Builder uriBuilder = Uri.parse(Url.GET_TOPICS).buildUpon()
+	public synchronized static void getMessages(Response.Listener<MessageData> listener,
+	                                            Response.ErrorListener errorListener,
+	                                            String accessToken) {
+		Uri.Builder uriBuilder = Uri.parse(Url.GET_MESSAGES).buildUpon()
 				.appendQueryParameter("accesstoken", accessToken);
 		String uri = uriBuilder.build().toString();
 		GsonRequest<MessageData> request = new GsonRequest<MessageData>(Request.Method.GET

@@ -6,7 +6,6 @@ public class Reply {
 
 	private String id;
 	private String content;
-	private int ups;
 	private Date createAt;
 
 	public String getId() {
@@ -23,14 +22,6 @@ public class Reply {
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-	public int getUps() {
-		return ups;
-	}
-
-	public void setUps(int ups) {
-		this.ups = ups;
 	}
 
 	public Date getCreateAt() {
